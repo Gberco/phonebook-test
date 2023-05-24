@@ -86,7 +86,8 @@ app.post('/api/persons', (request, response, next) => {
     const body = request.body
        
     if(!body.name || !body.number ){
-        return response.status(404).json({
+        console.log('Necesita ingresar información requerida')
+        return response.status(400).json({
             error: 'content missing'
         })
     }
